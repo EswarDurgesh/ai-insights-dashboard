@@ -1,0 +1,40 @@
+/* components/Navigation.css */
+
+.navigation {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 200px;
+    float: left;
+  }
+  
+  .navigation li {
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .navigation li:hover {
+    background-color: #e0e0e0; /* Apply background color on hover */
+  }
+  
+  .navigation li.selected {
+    background-color: #ddd; /* Apply background color to selected item */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow for selected item */
+  }
+  
+  .navigation li.user-satisfaction.selected {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Add stronger box shadow for User Satisfaction */
+  }
+  
+  .navigation li.category-distribution.selected {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Example: Add box shadow for Category Distribution */
+  }
+  
+  .navigation li.response-times.selected {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Example: Add box shadow for Response Times */
+  }
+  
+  .navigation li.usage-statistics.selected {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Example: Add box shadow for Usage Statistics */
+  }
+  

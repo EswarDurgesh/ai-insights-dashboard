@@ -1,0 +1,1 @@
+export const FETCH_AI_DATA = 'FETCH_AI_DATA';

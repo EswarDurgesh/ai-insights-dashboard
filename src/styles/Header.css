@@ -1,0 +1,18 @@
+/* Header.css */
+
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    position: relative;
+
+    line-height:13px; /* Set line-height equal to footer height */
+
+    height: 40px;
+  }
+  .h1{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+  }
