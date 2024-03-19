@@ -14,7 +14,12 @@ interface UserSatisfactionData {
   count: number;
 }
 
+/**
+ * App component represents the main application.
+ * It manages the state of various chart data and renders the appropriate chart based on user selection.
+ */
 const App: React.FC = () => {
+  // State variables to hold chart data
   const [responseTimesData, setResponseTimesData] = useState<{ date: string; average_time: number }[]>([]);
   const [usageStatisticsData, setUsageStatisticsData] = useState<{
     by_platform: { [platform: string]: number };
@@ -32,6 +37,7 @@ const App: React.FC = () => {
   ]);
   const [selectedChart, setSelectedChart] = useState('CategoryDistributionChart');
 
+  // Fetch response times data from API on component mount
   useEffect(() => {
     const fetchResponseTimesData = async () => {
       try {
@@ -46,6 +52,7 @@ const App: React.FC = () => {
     fetchResponseTimesData();
   }, []);
 
+  // Function to handle menu clicks and update selectedChart state
   const handleMenuClick = (chartName: string) => {
     setSelectedChart(chartName);
   };
@@ -54,9 +61,10 @@ const App: React.FC = () => {
     <div className="app">
       <Header />
       <div className="app-body">
-        {/* Pass selectedChart prop to the Navigation component */}
+        {/* Render Navigation component and pass selected chart and menu click handler */}
         <Navigation onMenuClick={handleMenuClick} selectedChart={selectedChart} />
         <main className="main-content">
+          {/* Render the selected chart based on selectedChart state */}
           {selectedChart === 'CategoryDistributionChart' && <CategoryDistributionChart />}
           {selectedChart === 'ResponseTimesChart' && <ResponseTimesChart data={responseTimesData} />}
           {selectedChart === 'UsageStatisticsChart' && <UsageStatisticsChart data={usageStatisticsData} />}

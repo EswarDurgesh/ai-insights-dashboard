@@ -1,16 +1,20 @@
 import React from 'react';
-import { PieChart, Pie, Legend, Cell } from 'recharts'; // Import Cell from recharts
+import { PieChart, Pie, Legend, Cell } from 'recharts';
 
+// Define interface for user satisfaction data
 interface UserSatisfactionData {
   rating: number;
   count: number;
 }
 
+// Define props interface for UserSatisfactionChart component
 interface Props {
   data: UserSatisfactionData[];
 }
 
+// Define the UserSatisfactionChart functional component
 const UserSatisfactionChart: React.FC<Props> = ({ data }) => {
+  // Define chart data with default values if no data is provided
   const chartData: UserSatisfactionData[] = data || [
     { rating: 1, count: 15 },
     { rating: 2, count: 35 },
@@ -22,6 +26,7 @@ const UserSatisfactionChart: React.FC<Props> = ({ data }) => {
   // Define an array of colors for each rating
   const colors = ['#0088FE', '#90EE90', '#FFBB28', '#FF8042', '#8884D8'];
 
+  // Render the UserSatisfactionChart component
   return (
     <div className="user-satisfaction-chart">
       <h3>User Satisfaction</h3>
@@ -46,4 +51,5 @@ const UserSatisfactionChart: React.FC<Props> = ({ data }) => {
   );
 };
 
+// Export the UserSatisfactionChart component
 export default UserSatisfactionChart;

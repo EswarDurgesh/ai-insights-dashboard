@@ -1,11 +1,13 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip } from 'recharts';
 
+// Define interface for usage statistics data
 interface UsageStatisticsData {
   category: string;
   count: number;
 }
 
+// Define props interface for UsageStatisticsChart component
 interface Props {
   data: {
     by_platform: { [platform: string]: number };
@@ -13,6 +15,7 @@ interface Props {
   };
 }
 
+// Define the UsageStatisticsChart functional component
 const UsageStatisticsChart: React.FC<Props> = ({ data }) => {
   // Define platform usage data manually
   const platformUsageData: UsageStatisticsData[] = [
@@ -30,6 +33,7 @@ const UsageStatisticsChart: React.FC<Props> = ({ data }) => {
     { category: 'Brazil', count: 200 },
   ];
 
+  // Render the UsageStatisticsChart component
   return (
     <div className="usage-statistics-chart">
       <h3>Usage Statistics</h3>
@@ -55,4 +59,5 @@ const UsageStatisticsChart: React.FC<Props> = ({ data }) => {
   );
 };
 
+// Export the UsageStatisticsChart component
 export default UsageStatisticsChart;
