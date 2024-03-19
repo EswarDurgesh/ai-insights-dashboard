@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Header.css'; // Adjust the path to import Footer.css
+import '../styles/Header.css'; 
 
 
 const Header: React.FC = () => {
